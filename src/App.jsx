@@ -53,7 +53,7 @@ export default function CISASimulator() {
   const formatTime = (s) => `${String(Math.floor(s/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`;
 
   const generateQuestion = async (domainName) => {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch("/api/ask", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
